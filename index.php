@@ -6,10 +6,12 @@ $pass   = 'Issamasm@123456';
 
 try {
     $pdo = new PDO(
-        "mysql:host=$host;dbname=$dbname;charset=utf8",
-        $user, $pass,
-        [PDO::MYSQL_ATTR_SSL_CA => '/etc/ssl/certs/ca-certificates.crt']
-    );
+    "mysql:host=$host;dbname=$dbname;charset=utf8",
+    $user, $pass,
+    [
+        PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false
+    ]
+);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     die('Erreur connexion : ' . $e->getMessage());
