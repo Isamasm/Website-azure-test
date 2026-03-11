@@ -6,11 +6,11 @@ $pass   = 'Issamasm@123456';
 
 try {
     $pdo = new PDO(
-    "mysql:host=$host;dbname=$dbname;charset=utf8;sslmode=required",
+    "mysql:host=$host;dbname=$dbname;charset=utf8",
     $user, $pass,
     [
-        PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false,
-        PDO::MYSQL_ATTR_SSL_CA => true
+        PDO::MYSQL_ATTR_SSL_CA => '/etc/ssl/certs/ca-bundle.crt',
+        PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false
     ]
 );
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
