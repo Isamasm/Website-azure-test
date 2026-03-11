@@ -1,8 +1,8 @@
 <?php
 $host   = 'mysql-produits-srv.mysql.database.azure.com';
 $dbname = 'catalogueproduits';
-$user   = 'adminuser';
-$pass   = 'P@ssw0rd2025!';
+$user   = 'azureuser';
+$pass   = 'Issamasm@123456';
 
 try {
     $pdo = new PDO(
